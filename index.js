@@ -45,32 +45,20 @@ inquirer
   ])
   .then(response => 
     {
-      let readMd = `# ${response.projectName}
-      ## Description:
-        ${response.describe}
-      
-        ## Table of Contents:
-        Installation
-        Usage
-        Credits
-        License
+      let readMd = `
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>`;
 
-        ## Installation:
-        ${response.installed}
-      
-        ## License:
-        ${response.license}     
-
-        ##  Contributing:
-         ${response.contributors}
-
-        ## Tests:
-         ${response.tests}
-      
-        ## Notes:
-        ${response.questions}`;
-
-      fs.writeFile(`${response.projectName}` +".md", readMd, (err) => {
+      fs.writeFile(`${response.projectName}` +".html", html, (err) => {
         if(err){
           console.log(err);
         }
